@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:rootpassword@localhost:27017
+      database: boot-mongodb

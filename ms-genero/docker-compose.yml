@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+
+  #  mysql:
+  #    image: mysql:8.0.22
+  #    container_name: mysql
+  #    ports:
+  #      - 3306:3306
+  #    environment:
+  #      MYSQL_USER: apinome
+  #      MYSQL_PASSWORD: apinome
+  #      MYSQL_ROOT_PASSWORD: root
+  #      MYSQL_DATABASE: apinome_db
+
+  postgres:
+    image: 'postgres:10-alpine'
+    volumes:
+      - postgres-volume-2:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: apigenero
+      POSTGRES_PASSWORD: apigenero
+      #POSTGRES_MULTIPLE_DATABASES: transacao, keycloak
+      POSTGRES_DB: apigenerodb
+      POSTGRES_HOST: postgres
+
+volumes:
+  postgres-volume-2:
